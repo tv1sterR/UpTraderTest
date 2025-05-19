@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Древовидное меню{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <h1>Древовидное меню </h1>
+
+        <div class="menu-wrapper">
+            <h2>Основное меню</h2>
+            <ul class="tree-menu">
+                {% for item in menu_tree %}
+                    {% include "tree_menu/menu_item.html" with item=item %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="content">
+            {% block page_content %}
+            <p>Наведите на пункты меню для раскрытия подменю</p>
+            <p>Активные пункты меню подсвечиваются синим цветом</p>
+            {% endblock %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

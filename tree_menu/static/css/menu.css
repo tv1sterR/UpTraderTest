@@ -1,0 +1,94 @@
+.tree-menu {
+    list-style: none;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.tree-menu .menu-item {
+    position: relative;
+    margin: 2px 0;
+}
+
+.tree-menu .menu-item > a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+    border-left: 3px solid transparent;
+}
+
+.tree-menu .menu-item > a:hover {
+    background-color: #e9ecef;
+    color: #0056b3;
+}
+
+.tree-menu .menu-item.active > a {
+    font-weight: 600;
+    color: #fff;
+    background-color: #0d6efd;
+    border-left-color: #0a58ca;
+}
+
+.tree-menu .submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+    margin-top: 5px;
+}
+
+.tree-menu .menu-item:hover > .submenu,
+.tree-menu .menu-item.active > .submenu,
+.tree-menu .menu-item.is-expanded > .submenu {
+    display: block;
+}
+
+.tree-menu .menu-item.has-children > a {
+    position: relative;
+    padding-right: 35px;
+}
+
+.tree-menu .menu-item.has-children > a::after {
+    content: '›';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s;
+}
+
+.tree-menu .menu-item.has-children:hover > a::after,
+.tree-menu .menu-item.has-children.is-expanded > a::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.tree-menu .submenu {
+    position: relative;
+}
+
+.tree-menu .submenu::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #dee2e6;
+}
+
+.tree-menu .menu-item {
+    position: relative;
+}
+
+.tree-menu .menu-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 15px;
+    height: 1px;
+    background-color: #dee2e6;
+}

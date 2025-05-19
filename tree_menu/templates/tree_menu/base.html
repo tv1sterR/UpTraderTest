@@ -1,0 +1,28 @@
+{% load static %}
+{% load menu_tags %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>{% block header %}Мой сайт{% endblock %}</h1>
+            <nav class="main-navigation">
+                {% draw_menu 'main_menu' %}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+</html>
